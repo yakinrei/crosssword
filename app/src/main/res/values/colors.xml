@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="magenta">#EE008E</color> <!-- Magenta -->
+    <color name="rosa">#EA0047</color> <!-- Rosa -->
+    <color name="purpura">#770044</color> <!-- Roxo -->
+    <color name="roxo">#750087</color> <!-- Roxo -->
+    <color name="azul_marinho">#010082</color> <!-- Azul Marinho -->
+    <color name="azul_naval">#000040</color> <!-- Azul Naval -->
+    <color name="cinza">#433437</color> <!-- Cinza Escuro -->
+    <color name="bordô">#740001</color> <!-- Bordô -->
+    <color name="vermelho">#EE0000</color> <!-- Cinza -->
+    <color name="laranja">#F47700</color> <!-- Laranja -->
+    <color name="ocre">#7C6201</color> <!-- Ocre -->
+    <color name="verde_escuro">#005200</color> <!-- Esmeralda -->
+    <color name="petroleo">#00555C</color> <!-- Petróleo -->
+    <color name="azul_celeste">#0155B8</color> <!-- Azul Celeste -->
+    <color name="ciano">#01ADED</color> <!-- Azul Celeste -->
+    <color name="esmeralda">#00A874</color> <!-- Preto -->
+    <color name="verde">#02A401</color> <!-- Verde -->
+    <color name="verde_lima">#80CB00</color> <!-- Verde Lima -->
+    <color name="amarelo">#FDF100</color> <!-- Amarelo -->
+</resources>

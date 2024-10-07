@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Cor de preenchimento -->
+    <path
+        android:fillColor="@color/rosa"
+        android:strokeWidth="4"
+        android:pathData="M95,50 L74,92 L26,92 L5,50 L26,8 L74,8 Z"/>
+</vector>

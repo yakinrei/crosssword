@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imagens>
+    <imagem>
+        <titulo>Imagem 1</titulo>
+        <url>http://exemplo.com/imagem1.jpg</url>
+        <descricao>Descrição da imagem 1.</descricao>
+    </imagem>
+    <imagem>
+        <titulo>Imagem 2</titulo>
+        <url>http://exemplo.com/imagem2.jpg</url>
+        <descricao>Descrição da imagem 2.</descricao>
+    </imagem>
+    <imagem>
+        <titulo>Imagem 3</titulo>
+        <url>http://exemplo.com/imagem3.jpg</url>
+        <descricao>Descrição da imagem 3.</descricao>
+    </imagem>
+</imagens>

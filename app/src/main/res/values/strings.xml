@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Crossing Swords</string>
+    <string name="notification_channel_id">your_channel_id</string>
+    <string name="notification_title">Título da Notificação</string>
+    <string name="notification_text">Texto da Notificação</string>
+    <string name="button_start_text">Iniciar</string>"
+    <string name="subtitle">「この字幕を訳すのをやめて、遊びに行こう！」</string>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <samurai-array name="SamuraisClanAtivo">
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>10</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>9</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>8</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>7</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>6</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>5</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>4</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>3</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>2</victoryRecord>
+            <status>false</status>
+        </samurai>
+        <samurai>
+            <samuraiName>Desconhecido</samuraiName>
+            <victoryRecord>1</victoryRecord>
+            <status>false</status>
+        </samurai>
+    </samurai-array>
+</resources>

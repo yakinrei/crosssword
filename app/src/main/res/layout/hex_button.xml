@@ -1,0 +1,23 @@
+<!-- hex_item.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="20sp"
+    android:layout_height="20sp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Primeira camada de cor -->
+    <ImageView
+        android:id="@+id/hex_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/hex_color2"
+        android:scaleType="fitXY"
+        android:tint="@color/white" /> <!-- A cor pode ser modificada depois -->
+
+    <!-- Segunda camada (contorno ou fundo) -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/hex2" /> <!-- Fundo ou borda do hexágono -->
+</FrameLayout>

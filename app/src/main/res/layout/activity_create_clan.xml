@@ -1,0 +1,692 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/dojo"
+    android:scalexy=""
+    android:weightSum="7"
+    android:padding="16sp">
+
+    <!-- Seção da esquerda para seleção de cores -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="415dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/textViewprimaryColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/samurai"
+                android:paddingBottom="8dp"
+                android:text="Cor Primária"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewsecundaryColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/samurai"
+                android:paddingBottom="8dp"
+                android:text="Cor Secundária"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/textViewsecundaryColor2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/samurai"
+                android:paddingBottom="8dp"
+                android:text="Cor Secundária"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="500sp"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="10sp">
+
+                <!-- Primeira Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexmagenta"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/magenta" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <!-- Segunda Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-30dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexrosa"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/rosa" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexroxo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/roxo" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <!-- Terceira Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-60dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexvermelho"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/vermelho" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexpurpura"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/purpura" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexmarinho"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/azul_marinho" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <!-- Quarta Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-90dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexbordo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/bordô" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexnaval"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/azul_naval" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <!-- Quinta Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-120dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexlaranja"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/laranja" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexcinza"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/cinza" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexceleste"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/azul_celeste" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <!-- Sexta Linha -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-150dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexocre"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/ocre" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp" />
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexpetroleo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/petroleo" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-180dp">
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexamarelo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/amarelo" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp"></Space>
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexescuro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/verde_escuro" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp"></Space>
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexciano"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/ciano" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <!-- Adicione outros hexágonos da linha aqui -->
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-210dp"> <!-- Move a segunda linha 25dp para cima -->
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexlima"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/verde_lima" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="18dp"
+                        android:layout_height="0dp"></Space>
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexesmeralda"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/esmeralda" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+
+                    <!-- Adicione outros hexágonos da linha aqui -->
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-240dp"> <!-- Move a segunda linha 25dp para cima -->
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexverde"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/verde" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+
+                    <!-- Adicione outros hexágonos da linha aqui -->
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:translationY="-270dp"> <!-- Move a segunda linha 25dp para cima -->
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexpreto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/black" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+                    <Space
+                        android:layout_width="8dp"
+                        android:layout_height="0dp"></Space>
+
+
+                    <FrameLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:clickable="false"
+                        android:focusable="false"></FrameLayout>
+
+                    <Space
+                        android:layout_width="8dp"
+                        android:layout_height="0dp"></Space>
+
+
+                    <FrameLayout
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/hexbranco"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/hex_color2"
+                            app:tint="@color/white" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hex2" />
+                    </FrameLayout>
+
+
+                    <!-- Adicione outros hexágonos da linha aqui -->
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:layout_weight="3"-->
+            <!--            android:orientation="vertical">-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/editClan"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:enabled="true"-->
+            <!--                android:hint="Clan" />-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/editName"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:enabled="true"-->
+            <!--                android:hint="Nome" />-->
+
+            <!--            <FrameLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_weight="1">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/imageSamurai"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_gravity="center"-->
+            <!--                    android:src="@drawable/pmbig" />-->
+
+            <!--                &lt;!&ndash; Adicione outras imagens como bandeira aqui &ndash;&gt;-->
+            <!--            </FrameLayout>-->
+            <!--        </LinearLayout>-->
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:layout_weight="2"-->
+            <!--            android:orientation="vertical">-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Selecione o Símbolo do Clã" />-->
+
+            <!--            <GridLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:columnCount="3"-->
+            <!--                android:rowCount="6">-->
+
+            <!--                &lt;!&ndash; Adicione 18 ImageViews para os ícones dos clãs &ndash;&gt;-->
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/icon1"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_margin="4dp"-->
+            <!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
+            <!--                    android:clickable="true"-->
+            <!--                    android:src="@drawable/ic_launcher_background" />-->
+
+            <!--                &lt;!&ndash; Repita para os outros 17 ícones &ndash;&gt;-->
+            <!--            </GridLayout>-->
+            <!--        </LinearLayout>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"></LinearLayout>
+
+    </LinearLayout>
+
