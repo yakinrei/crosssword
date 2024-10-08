@@ -22,4 +22,5 @@
     <color name="verde">#02A401</color> <!-- Verde -->
     <color name="verde_lima">#80CB00</color> <!-- Verde Lima -->
     <color name="amarelo">#FDF100</color> <!-- Amarelo -->
+    <color name="semi_transparent_black">#80000000</color>
 </resources>

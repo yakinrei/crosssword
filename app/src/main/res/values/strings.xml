@@ -5,5 +5,8 @@
     <string name="notification_text">Texto da Notificação</string>
     <string name="button_start_text">Iniciar</string>"
     <string name="subtitle">「この字幕を訳すのをやめて、遊びに行こう！」</string>
+    <string name="clan_name">CLAN NAME</string>
+    <string name="samurai_name">SAMURAI NAME</string>
+    <string name="clan_icon">Simbolo</string>
 
 </resources>
