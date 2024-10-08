@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
     private var offset = 0
     private var offsetfar = 0
     private var offsetclose = 0
-    public var newclan = true
+    var newclan = true
+    var newsamurai = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,9 +61,10 @@ class MainActivity : AppCompatActivity() {
         createNotification()
 
         binding.startButton.setOnClickListener {
-            if (newclan == true) {
+            if (newsamurai == true) {
                 val intent = Intent(this, CreateClan::class.java)
                 startActivity(intent)
+
             }
             else {
                 val intent = Intent(this, Dojo::class.java)
