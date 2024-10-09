@@ -75,7 +75,7 @@
             android:layout_height="50sp"
             android:layout_gravity="center"
             android:layout_centerInParent="true"
-            android:tint="@color/verde"
+            app:tint="@color/verde"
             android:src="@drawable/wave" />
 
 
@@ -688,7 +688,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            android:tint="@color/verde" />
+                            app:tint="@color/verde" />
 
                         <ImageView
                             android:layout_width="match_parent"
