@@ -1,107 +1,100 @@
-// ImageModifier.kt
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import androidx.core.content.ContextCompat
-import org.bytedeco.javacv.*
-import org.bytedecao.opencv.global.opencv_core.*
-import org.bytedeco.opencv.global.opencv_imgcodecs.*
-import org.bytedeco.opencv.global.opencv_imgproc.*
-import org.bytedeco.opencv.opencv_core.*
+import android.util.Log
+import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 object ImageModifier {
+
+    // Cores a serem substituídas
+    private const val ORIGINAL_HAKAMA_COLOR = 0xFFAFAFAF.toInt() // Cor original do hakama (cinza)
+    private const val ORIGINAL_KENDOGI_COLOR = 0xFF142168.toInt() // Cor original do kendogi (azul)
+
     fun modifyImages(
         context: Context,
-        imageResIds: IntArray,
+        imagesid: List<Int>,
         hakamaColor: Int? = null,
-        kendogiColor: Int? = null
-    ) {
-        for (imageResId in imageResIds) {
-            // Carregar a imagem
-            val drawable: Drawable? = ContextCompat.getDrawable(context, imageResId)
-            val img: Mat = drawableToMat(drawable)
+        kendogiColor: Int? = null,
+        p1: Boolean) {
+        Toast.makeText(context, "INICIANDO MODIFICAÇÕES", Toast.LENGTH_SHORT).show()
+        for (id in imagesid) {
+            // Usando Glide para carregar a imagem como Bitmap
+            Log.d("ImageModifier", "Carregando imagem")
+            Glide.with(context)
+                .asBitmap()
+                .load(id)
+                .into(object : CustomTarget<Bitmap>() {
+                    override fun onResourceReady(
+                        resource: Bitmap,
+                        transition: Transition<in Bitmap>?
+                    ) {
+                        // Quando a imagem é carregada, modificamos as cores
+                        Toast.makeText(context, "CARREGOU O PARANAUE", Toast.LENGTH_SHORT).show()
+                        val modifiedBitmap = replaceColorsInBitmap(resource, hakamaColor, kendogiColor)
+                        val resourceName = context.resources.getResourceEntryName(id)
+                        val prefix = if (p1) "p1_" else "p2_"
+                        val fileName = "$prefix${resourceName}.png"
+                        saveBitmapToFile(context, modifiedBitmap, fileName)
+                    }
 
-            // Converter a imagem para o espaço de cores HSV
-            val hsv = Mat()
-            cvtColor(img, hsv, COLOR_BGR2HSV)
-
-            // Modificar o hakama se a cor for fornecida
-            hakamaColor?.let {
-                // Definir o intervalo de cores para o hakama
-                val lowerHakama = Scalar(0.0, 0.0, 100.0, 0.0)
-                val upperHakama = Scalar(180.0, 50.0, 255.0, 0.0)
-
-                // Criar uma máscara para o hakama
-                val maskHakama = Mat()
-                inRange(hsv, lowerHakama, upperHakama, maskHakama)
-
-                // Aplicar a nova cor ao hakama
-                val newColorHakama = Scalar(it.toDouble(), it.toDouble(), it.toDouble(), 0.0)
-                img.setTo(newColorHakama, maskHakama)
-            }
-
-            // Modificar o kendogi se a cor for fornecida
-            kendogiColor?.let {
-                // Definir o intervalo de cores para o kendogi
-                val lowerKendogi = Scalar(100.0, 50.0, 50.0, 0.0)
-                val upperKendogi = Scalar(140.0, 255.0, 255.0, 0.0)
-
-                // Criar uma máscara para o kendogi
-                val maskKendogi = Mat()
-                inRange(hsv, lowerKendogi, upperKendogi, maskKendogi)
-
-                // Aplicar a nova cor ao kendogi
-                val newColorKendogi = Scalar(it.toDouble(), it.toDouble(), it.toDouble(), 0.0)
-                img.setTo(newColorKendogi, maskKendogi)
-            }
-
-            // Salvar a imagem resultante
-            saveMatToFile(img, "caminho/para/imagem_modificada.png")
+                    override fun onLoadCleared(placeholder: Drawable?) {
+                        // Implementação vazia (opcional)
+                        Toast.makeText(context, "NÃO CARREGOU O PARANAUE", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
     }
 
-    // Método fictício para converter Drawable em Mat
-    private fun drawableToMat(drawable: Drawable?): Mat {
-        // Implementar a lógica de conversão
+    // Função para substituir as cores específicas no Bitmap
+    private fun replaceColorsInBitmap(bitmap: Bitmap, hakamaColor: Int?, kendogiColor: Int?): Bitmap {
+        val modifiedBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+
+        // Percorrendo cada pixel do bitmap
+        for (x in 0 until modifiedBitmap.width) {
+            for (y in 0 until modifiedBitmap.height) {
+                val pixelColor = modifiedBitmap.getPixel(x, y)
+
+                // Se for a cor do hakama (#AFAFAF), substituir pela nova cor
+                if (pixelColor == ORIGINAL_HAKAMA_COLOR && hakamaColor != null) {
+                    modifiedBitmap.setPixel(x, y, hakamaColor)
+                }
+
+                // Se for a cor do kendogi (#142168), substituir pela nova cor
+                if (pixelColor == ORIGINAL_KENDOGI_COLOR && kendogiColor != null) {
+                    modifiedBitmap.setPixel(x, y, kendogiColor)
+                }
+            }
+        }
+
+        return modifiedBitmap
     }
 
-    // Método fictício para salvar Mat em um arquivo
-    private fun saveMatToFile(mat: Mat, path: String) {
-        // Implementar a lógica de salvar
+    // Função para salvar o Bitmap modificado em um arquivo
+    private fun saveBitmapToFile(context: Context, bitmap: Bitmap, fileName: String) {
+        val file = File(context.getExternalFilesDir(null), fileName)
+        var fos: FileOutputStream? = null
+        Toast.makeText(context, fileName, Toast.LENGTH_SHORT).show()
+        try {
+            fos = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos)
+            //fos.flush()
+            Toast.makeText(context, "PARANAUE SALVO", Toast.LENGTH_SHORT).show()
+        } catch (e: IOException) {
+            Toast.makeText(context, "NÃO SALVOU O PARANAUE", Toast.LENGTH_SHORT).show()
+            e.printStackTrace()
+        } finally {
+            try {
+                fos?.close()
+            } catch (e: IOException) {
+                Toast.makeText(context, "NÃO SALVOU O PARANAUE 2", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            }
+        }
     }
 }
-
-//
-//
-//// SecondActivity.kt
-//import android.os.Bundle
-//import androidx.appcompat.app.AppCompatActivity
-//
-//class SecondActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_second)
-//
-//        val imageResIds = resources.getStringArray(R.array.image_list).map { resources.getIdentifier(it, "drawable", packageName) }.toIntArray()
-//        val hakamaColor = ContextCompat.getColor(this, R.color.hakama_color)
-//
-//        // Modificar apenas o hakama
-//        ImageModifier.modifyImages(this, imageResIds, hakamaColor = hakamaColor)
-//    }
-//}
-//
-//// ThirdActivity.kt
-//import android.os.Bundle
-//import androidx.appcompat.app.AppCompatActivity
-//
-//class ThirdActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_third)
-//
-//        val imageResIds = resources.getStringArray(R.array.image_list).map { resources.getIdentifier(it, "drawable", packageName) }.toIntArray()
-//        val kendogiColor = ContextCompat.getColor(this, R.color.kendogi_color)
-//
-//        // Modificar apenas o kendogi
-//        ImageModifier.modifyImages(this, imageResIds, kendogiColor = kendogiColor)
-//    }
-//}

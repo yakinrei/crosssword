@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:id="@+id/createClan"
     android:background="@drawable/dojo2"
     android:weightSum="7"
-    android:padding="16sp">
+    android:padding="0sp">
 
     <!-- Seção da esquerda para seleção de cores -->
 
@@ -69,11 +70,12 @@
             android:src="@drawable/bandeira"/>
 
         <ImageView
-            android:id="@+id/sunrise_image"
+            android:id="@+id/clanicon"
             android:layout_width="50sp"
             android:layout_height="50sp"
             android:layout_gravity="center"
             android:layout_centerInParent="true"
+            android:tint="@color/verde"
             android:src="@drawable/wave" />
 
 
@@ -199,6 +201,7 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/collorButtons"
                     android:gravity="center">
 
                     <FrameLayout
@@ -212,6 +215,7 @@
                             android:clickable="true"
                             android:focusable="true"
                             android:src="@drawable/hex_color2"
+                            android:tag="collorButton"
                             app:tint="@color/magenta" />
 
                         <ImageView
@@ -238,6 +242,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/rosa" />
 
@@ -261,6 +266,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/roxo" />
 
@@ -288,6 +294,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/vermelho" />
 
@@ -311,6 +318,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/purpura" />
 
@@ -334,6 +342,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/azul_marinho" />
 
@@ -360,6 +369,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:clickable="true"
+                            android:tag="collorButton"
                             android:focusable="true"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/bordô" />
@@ -383,6 +393,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:clickable="true"
+                            android:tag="collorButton"
                             android:focusable="true"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/azul_naval" />
@@ -411,6 +422,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/laranja" />
 
@@ -434,6 +446,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/cinza" />
 
@@ -457,6 +470,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/azul_celeste" />
 
@@ -484,6 +498,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/ocre" />
 
@@ -507,6 +522,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/petroleo" />
 
@@ -533,6 +549,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/amarelo" />
 
@@ -544,7 +561,7 @@
 
                     <Space
                         android:layout_width="18dp"
-                        android:layout_height="0dp"></Space>
+                        android:layout_height="0dp"/>
 
                     <FrameLayout
 
@@ -557,6 +574,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/verde_escuro" />
 
@@ -568,7 +586,7 @@
 
                     <Space
                         android:layout_width="18dp"
-                        android:layout_height="0dp"></Space>
+                        android:layout_height="0dp"/>
 
                     <FrameLayout
 
@@ -581,6 +599,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/ciano" />
 
@@ -611,6 +630,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/verde_lima" />
 
@@ -622,7 +642,7 @@
 
                     <Space
                         android:layout_width="18dp"
-                        android:layout_height="0dp"></Space>
+                        android:layout_height="0dp"/>
 
                     <FrameLayout
                         android:layout_width="50dp"
@@ -634,6 +654,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/esmeralda" />
 
@@ -665,8 +686,9 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/verde" />
+                            android:tint="@color/verde" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -695,6 +717,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/black" />
 
@@ -731,6 +754,7 @@
                             android:layout_height="match_parent"
                             android:clickable="true"
                             android:focusable="true"
+                            android:tag="collorButton"
                             android:src="@drawable/hex_color2"
                             app:tint="@color/white" />
 

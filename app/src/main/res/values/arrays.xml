@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="default_images">
+        <item>@drawable/animedefault_0</item>
+        <item>@drawable/animedefault_1</item>
+    </array>
+
+
+
+
+</resources>
