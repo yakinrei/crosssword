@@ -6,7 +6,7 @@
 
     <!-- Cor de preenchimento -->
     <path
-        android:fillColor="@color/white"
+        android:fillColor="@color/branco"
         android:strokeWidth="4"
         android:pathData="M50,5 L92,26 L92,74 L50,95 L8,74 L8,26 Z"/>
 </vector>

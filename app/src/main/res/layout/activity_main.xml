@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:background="@color/black"
+        android:background="@color/preto"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="40dp"
-            android:textColor="@color/black"
+            android:textColor="@color/preto"
             android:fontFamily="@font/samurai"
             android:text="@string/app_name"
             android:textAlignment="center"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="0dp"
-            android:textColor="@color/black"
+            android:textColor="@color/preto"
             android:fontFamily="@font/samurai"
             android:text="@string/subtitle"
             android:textAlignment="center"
@@ -159,6 +159,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="75sp"
             android:gravity="center">
 
             <TableRow
@@ -175,10 +176,26 @@
                     android:fontFamily="@font/samurai"
                     android:textSize="30sp"
                     android:gravity="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/preto"
                     android:text="@string/button_start_text" />
             </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/cemiterioButton"
+                    android:layout_width="350sp"
+                    android:layout_height="100sp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/samurai"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="@color/preto"
+                    android:text="Cemitério" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 

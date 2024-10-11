@@ -13,10 +13,10 @@
     <!-- Seção da esquerda para seleção de cores -->
 
     <LinearLayout
-    android:id="@+id/layer0"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+        android:id="@+id/layer0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Space
             android:layout_width="match_parent"
@@ -26,57 +26,57 @@
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="100sp"
-            android:gravity="center"
-            android:layout_marginLeft="37sp"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="5sp">
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
+                android:layout_width="225sp"
+                android:layout_height="120sp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/placa"/>
 
-            <TextView
-                    android:id="@+id/clanname"
-                    android:layout_width="155sp"
-                    android:layout_centerInParent="true"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
-                    android:fontFamily="@font/samurai"
-                    android:inputType="textCapWords"
-                    android:textColor="@color/black"
-                    android:text="CLAN"
-                    android:textAlignment="center"
-                    android:textSize="10sp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newItem"
+                android:layout_width="220sp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/samurai"
+                android:background="@android:color/transparent"
+                android:text="@string/clan_name"
+                android:textColor="@color/preto"
+                android:textSize="12sp"
+                android:inputType="textPersonName"
+                android:maxLength="17"
+                android:textAlignment="center" />
 
         </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="39sp"
-        android:layout_marginTop="-10sp"
-        android:layout_gravity="start"
-        android:gravity="start">
-
-        <ImageView
-            android:id="@+id/vector_image"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/bandeira"/>
+            android:layout_marginLeft="39sp"
+            android:layout_marginTop="-23sp"
+            android:layout_gravity="start"
+            android:gravity="start">
 
-        <ImageView
-            android:id="@+id/clanicon"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_gravity="center"
-            android:layout_centerInParent="true"
-            app:tint="@color/verde"
-            android:src="@drawable/wave" />
+            <ImageView
+                android:id="@+id/vector_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/bandeira"/>
+
+            <ImageView
+                android:id="@+id/clanicon"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                app:tint="@color/preto"
+                android:src="@drawable/wave" />
 
 
         </RelativeLayout>
@@ -102,99 +102,15 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
+            android:layout_marginTop="75sp"
             android:orientation="vertical"
             android:padding="0dp">
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="200sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="-50sp"
-                    android:layout_centerInParent="true"
-                    app:srcCompat="@drawable/placa"/>
-
-            <Button
-                android:id="@+id/kendogiColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/transparent"
-                android:fontFamily="@font/samurai"
-                android:text="Kendogi"
-                android:textAlignment="center"
-                android:layout_centerInParent="true"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-10sp"
-                android:layout_gravity="center_horizontal">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="200sp"
-                android:layout_height="100sp"
-                android:layout_marginTop="-50sp"
-                android:layout_centerInParent="true"
-                app:srcCompat="@drawable/placa"/>
-
-            <Button
-                android:id="@+id/hakamaColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/transparent"
-                android:fontFamily="@font/samurai"
-                android:text="Hakama"
-                android:textAlignment="center"
-                android:layout_centerInParent="true"
-                android:textColor="@color/semi_transparent_black"
-                android:textSize="16sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-10sp"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-
-                    android:layout_width="200sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="-50sp"
-                    android:layout_centerInParent="true"
-                    app:srcCompat="@drawable/placa"/>
-
-                <Button
-                    android:id="@+id/simbolColor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/transparent"
-                    android:fontFamily="@font/samurai"
-                    android:text="Simbolo"
-                    android:textAlignment="center"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/semi_transparent_black"
-                    android:textSize="16sp" />
-
-            </RelativeLayout>
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="500sp"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:paddingBottom="10sp">
 
                 <!-- Primeira Linha -->
@@ -344,7 +260,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/azul_marinho" />
+                            app:tint="@color/marinho" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -372,7 +288,7 @@
                             android:tag="collorButton"
                             android:focusable="true"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/bordô" />
+                            app:tint="@color/bordo" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -396,7 +312,7 @@
                             android:tag="collorButton"
                             android:focusable="true"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/azul_naval" />
+                            app:tint="@color/naval" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -472,7 +388,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/azul_celeste" />
+                            app:tint="@color/celeste" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -576,7 +492,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/verde_escuro" />
+                            app:tint="@color/floresta" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -632,7 +548,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/verde_lima" />
+                            app:tint="@color/lima" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -719,7 +635,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/black" />
+                            app:tint="@color/preto" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -756,7 +672,7 @@
                             android:focusable="true"
                             android:tag="collorButton"
                             android:src="@drawable/hex_color2"
-                            app:tint="@color/white" />
+                            app:tint="@color/branco" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -795,72 +711,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="3"
             android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="100sp"
             android:padding="0dp">
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="200sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="-50sp"
-                    android:layout_centerInParent="true"
-                    app:srcCompat="@drawable/placa"/>
-
-                <EditText
-                    android:id="@+id/clanname2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/samurai"
-                    android:text="@string/clan_name"
-                    android:textAlignment="center"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="200sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="-50sp"
-                    android:layout_centerInParent="true"
-                    app:srcCompat="@drawable/placa"/>
-
-                <EditText
-                    android:id="@+id/samurainame2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/transparent"
-                    android:fontFamily="@font/samurai"
-                    android:text="@string/samurai_name"
-                    android:textAlignment="center"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </RelativeLayout>
-
-          <Space
-              android:layout_width="match_parent"
-              android:layout_height="10sp"/>
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="180sp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:paddingTop="20sp"
                 android:paddingBottom="10sp">
 
                 <TableRow
@@ -868,26 +729,27 @@
                     android:layout_height="match_parent"
                     android:gravity="center">
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
 
-                    <ImageView
-                        android:layout_width="60sp"
-                        android:layout_height="60sp"
-                        android:layout_centerInParent="true"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:srcCompat="@drawable/placa2"/>
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+                            app:srcCompat="@drawable/placa2"/>
 
-                    <ImageView
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/bamboo"/>
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/bamboo"
+                            app:srcCompat="@drawable/bamboo"/>
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -898,18 +760,19 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/bonsai"
                             app:srcCompat="@drawable/bonsai"/>
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -920,14 +783,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/shuriken"
                             app:srcCompat="@drawable/shuriken"/>
 
 
@@ -942,14 +807,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/fan"
                             app:srcCompat="@drawable/fan"/>
 
                     </RelativeLayout>
@@ -970,14 +837,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/teapot"
                             app:srcCompat="@drawable/teapot"/>
 
 
@@ -996,14 +865,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/sunrise"
                             app:srcCompat="@drawable/sunrise"/>
 
 
@@ -1018,14 +889,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/helmet"
                             app:srcCompat="@drawable/helmet"/>
 
 
@@ -1040,14 +913,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/lantern"
                             app:srcCompat="@drawable/lantern"/>
 
                     </RelativeLayout>
@@ -1069,14 +944,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/lotus"
                             app:srcCompat="@drawable/lotus"/>
 
 
@@ -1095,14 +972,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/oni"
                             app:srcCompat="@drawable/oni"/>
 
 
@@ -1117,14 +996,16 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/wave"
                             app:srcCompat="@drawable/wave"/>
 
 
@@ -1139,15 +1020,231 @@
                             android:layout_width="60sp"
                             android:layout_height="60sp"
                             android:layout_centerInParent="true"
-                            android:clickable="true"
-                            android:focusable="true"
+
                             app:srcCompat="@drawable/placa2"/>
 
                         <ImageView
                             android:layout_width="30sp"
                             android:layout_height="30sp"
                             android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/yunluo"
                             app:srcCompat="@drawable/yunluo"/>
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/trefoil"
+                            app:srcCompat="@drawable/trefoil"/>
+
+
+
+
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/flame"
+                            app:srcCompat="@drawable/flame"/>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/yinyang"
+                            app:srcCompat="@drawable/yinyang"/>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/wind"
+                            app:srcCompat="@drawable/wind"/>
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/fox"
+                            app:srcCompat="@drawable/fox"/>
+
+
+
+
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/mouse"
+                            app:srcCompat="@drawable/mouse"/>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/spider"
+                            app:srcCompat="@drawable/spider"/>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_centerInParent="true"
+
+                            app:srcCompat="@drawable/placa2"/>
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:id="@+id/gecko"
+                            app:srcCompat="@drawable/gecko"/>
 
                     </RelativeLayout>
 
@@ -1162,6 +1259,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
+                android:layout_marginTop="-40sp"
                 android:gravity="top|center_horizontal">
 
                 <ImageView
@@ -1180,9 +1278,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
                     android:fontFamily="@font/samurai"
-                    android:textColor="@color/black"
+                    android:textColor="@color/preto"
                     android:inputType="textCapWords"
-                    android:text="BUSCAR OPONENTE"
+                    android:text="CRIAR SAMURAI"
                     android:textAlignment="center"
                     android:textSize="10sp" />
 

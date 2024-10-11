@@ -6,7 +6,7 @@
 
     <!-- Retângulo branco -->
     <path
-        android:fillColor="@color/white"
+        android:fillColor="@color/branco"
         android:strokeWidth="0"
         android:pathData="M10,5 L90,5 L90,195 L10,195 Z"/>
 </vector>

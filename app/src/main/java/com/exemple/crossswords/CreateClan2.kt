@@ -1,136 +1,130 @@
 package com.exemple.crossswords
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.exemple.crossswords.databinding.ActivityCreateClanBinding
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-
+import com.exemple.crossswords.databinding.ActivityCreateClan2Binding
 
 class CreateClan2 : AppCompatActivity() {
-    private lateinit var binding: ActivityCreateClanBinding
-    private var hakama = false
-    private var kendogi = true
-    private var simbol = false
-    private var hakamaColor: Int? = null
-    private var kendogiColor: Int? = null
+    private lateinit var binding: ActivityCreateClan2Binding
+    private var color = "cinza"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityCreateClanBinding.inflate(layoutInflater)
+        binding = ActivityCreateClan2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var drawable = ContextCompat.getDrawable(this, R.drawable.animation_default)
-        var samuraiImageView = binding.samuraianimation // Usando o binding para referenciar a ImageView
-        samuraiImageView.setImageDrawable(drawable)
-        var samuraiAnimation = drawable as AnimationDrawable
-        samuraiAnimation.start()
+        // Inicializa a animação padrão
+        updateSamuraiAnimation(color)
 
-        val typedArray = resources.obtainTypedArray(R.array.default_images)
-        val imageIds = List(typedArray.length()) { typedArray.getResourceId(it, 0) }
-        typedArray.recycle() // Não esqueça de reciclar o TypedArray
+        // Configura os listeners para cada cor
+        setupColorClickListener(binding.hexmagenta, "magenta")
+        setupColorClickListener(binding.hexrosa, "rosa")
+        setupColorClickListener(binding.hexpurpura, "purpura")
+        setupColorClickListener(binding.hexroxo, "roxo")
+        setupColorClickListener(binding.hexmarinho, "marinho")
+        setupColorClickListener(binding.hexnaval, "naval")
+        setupColorClickListener(binding.hexcinza, "cinza")
+        setupColorClickListener(binding.hexbordo, "bordo")
+        setupColorClickListener(binding.hexvermelho, "vermelho")
+        setupColorClickListener(binding.hexlaranja, "laranja")
+        setupColorClickListener(binding.hexocre, "ocre")
+        setupColorClickListener(binding.hexescuro, "floresta")
+        setupColorClickListener(binding.hexpetroleo, "petroleo")
+        setupColorClickListener(binding.hexceleste, "celeste")
+        setupColorClickListener(binding.hexciano, "ciano")
+        setupColorClickListener(binding.hexesmeralda, "esmeralda")
+        setupColorClickListener(binding.hexverde, "verde")
+        setupColorClickListener(binding.hexlima, "lima")
+        setupColorClickListener(binding.hexamarelo, "amarelo")
+        setupColorClickListener(binding.hexbranco, "branco")
+        setupColorClickListener(binding.hexpreto, "preto")
 
-        binding.hexmagenta.setOnClickListener {
-            // Chama o método de modificação de imagens
-            if (hakama || kendogi) {
-                samuraiAnimation.stop()
+        val icons = listOf(
+            Pair(binding.bamboo, R.drawable.bamboo),
+            Pair(binding.bonsai, R.drawable.bonsai),
+            Pair(binding.wave, R.drawable.wave),
+            Pair(binding.wind, R.drawable.wind),
+            Pair(binding.flame, R.drawable.flame),
+            Pair(binding.shuriken, R.drawable.shuriken),
+            Pair(binding.fan, R.drawable.fan),
+            Pair(binding.teapot, R.drawable.teapot),
+            Pair(binding.sunrise, R.drawable.sunrise),
+            Pair(binding.helmet, R.drawable.helmet),
+            Pair(binding.lantern, R.drawable.lantern),
+            Pair(binding.lotus, R.drawable.lotus),
+            Pair(binding.oni, R.drawable.oni),
+            Pair(binding.yunluo, R.drawable.yunluo),
+            Pair(binding.trefoil, R.drawable.trefoil),
+            Pair(binding.yinyang, R.drawable.yinyang),
+            Pair(binding.fox, R.drawable.fox),
+            Pair(binding.mouse, R.drawable.mouse),
+            Pair(binding.spider, R.drawable.spider),
+            Pair(binding.gecko, R.drawable.gecko)
+        )
 
-                modifyImages(this, imageIds, hakama, true)
-
-                hakamaColor = if (hakama) R.color.magenta else hakamaColor
-                kendogiColor = if (kendogi) R.color.magenta else kendogiColor
-
-
-                samuraiImageView.setImageDrawable(null)
-
-
-                drawable = ContextCompat.getDrawable(this, R.drawable.p1_animedefault_0)
-                samuraiImageView.setImageDrawable(drawable)
-//                samuraiAnimation = drawable as AnimationDrawable
-//                samuraiAnimation.start()
-                // Se precisar alternar entre imagens, você pode fazer isso aqui
-                // Por exemplo, se você quiser mostrar a próxima imagem:
-                // val nextDrawable = ContextCompat.getDrawable(this, R.drawable.p1_animedefault_1)
-                // samuraiImageView.setImageDrawable(nextDrawable)
-
-                // Reinicia a animação se necessário
-                // samuraiAnimation.start() // Se você tiver uma animação
-            } else if (simbol) {
-                // Atualiza a cor do ícone do clã
-                binding.clanicon.imageTintList =
-                    ContextCompat.getColorStateList(this, R.color.magenta)
-            }
-
-            // Exibe um Toast para feedback
-            Toast.makeText(this, "MAGENTA", Toast.LENGTH_SHORT).show()
+        icons.forEach { (button, iconResId) ->
+            setupIconClickListener(button, iconResId)
         }
 
-}
+
+
+        val editor = MainActivity.sharedPreferences.edit()
+        editor.putBoolean("newsamurai", false)
+        editor.apply()
 
 
 
 
-    fun modifyImages(
-        context: Context,
-        imageIds: List<Int>,
-        hakama: Boolean,
-        p1: Boolean
-    ) {
-        val jacketColor = if (hakama) {
-            Color.parseColor("#AFAFAF") // Cor predefinida em hexadecimal
+
+
+
+    }
+
+        private fun setupIconClickListener(button: View, iconResId: Int) {
+            button.setOnClickListener {
+                binding.clanicon.setImageResource(iconResId)
+            }
+        }
+
+
+
+
+    private fun setupColorClickListener(button: View, colorName: String) {
+        button.setOnClickListener {
+            updateSamuraiAnimation(colorName)
+            Toast.makeText(this, colorName.uppercase(), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun updateSamuraiAnimation(color: String) {
+        val drawableName = "${color}_animation_default"
+        val drawableId = resources.getIdentifier(drawableName, "drawable", packageName)
+        val drawable = ContextCompat.getDrawable(this, drawableId)
+        // Supondo que você esteja dentro de uma Activity ou Fragment
+        val colorid = resources.getIdentifier(color, "color", packageName)
+        binding.vectorImage.setColorFilter(ContextCompat.getColor(this, colorid), PorterDuff.Mode.SRC_IN)
+        if (color == "preto") {
+            binding.clanicon.setColorFilter(ContextCompat.getColor(this, R.color.branco), PorterDuff.Mode.SRC_IN)
         } else {
-            Color.parseColor("#142168") // Segunda cor (vermelho)
+            binding.clanicon.setColorFilter(ContextCompat.getColor(this, R.color.preto), PorterDuff.Mode.SRC_IN)
         }
-
-        for (imageId in imageIds) {
-            // Carregar a imagem a partir do recurso
-            val bitmap = BitmapFactory.decodeResource(context.resources, imageId) ?: continue
-
-            // Percorrer os pixels da imagem
-            val largura = bitmap.width
-            val altura = bitmap.height
-            for (y in 0 until altura) {
-                for (x in 0 until largura) {
-                    val pixel = bitmap.getPixel(x, y)
-                    val r = Color.red(pixel)
-                    val g = Color.green(pixel)
-                    val b = Color.blue(pixel)
-                    // Supondo que a jaqueta seja de uma cor específica (ex.: azul)
-                    if (r == 0 && g == 0 && b == 255) { // Azul
-                        bitmap.setPixel(x, y, jacketColor)
-                    }
-                }
-            }
-
-            // Preparar o caminho para salvar a imagem alterada
-            val fileName = resources.getResourceEntryName(imageId)
-            val prefix = if (p1) "p1_" else "p2_"
-            val outputImagePath = "$prefix$fileName.png"
-            Toast.makeText(this, "ARQUIVO ${outputImagePath}", Toast.LENGTH_SHORT).show()
-
-            // Salvar a imagem alterada
-            try {
-                val file = File(outputImagePath)
-                val outputStream = FileOutputStream(file)
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-                Toast.makeText(this, "SALVOU ${file}", Toast.LENGTH_SHORT).show()
-                outputStream.flush()
-                outputStream.close()
-            } catch (e: IOException) {
-                Toast.makeText(this, "NÃO SALVOU PORRA NENHUMA", Toast.LENGTH_SHORT).show()
-                e.printStackTrace()
-            }
+        val samuraiImageView = binding.samuraianimation
+        if (drawable != null) {
+            val samuraiAnimation = drawable as AnimationDrawable
+            samuraiAnimation.stop()
+            samuraiImageView.setImageDrawable(null)
+            samuraiImageView.setImageDrawable(drawable)
+            samuraiAnimation.start()
+        } else {
+            Toast.makeText(this, "Drawable not found: $drawableName", Toast.LENGTH_SHORT).show()
         }
     }
 }

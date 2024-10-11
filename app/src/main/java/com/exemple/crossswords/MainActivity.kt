@@ -16,6 +16,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.exemple.crossswords.databinding.ActivityMainBinding
+import android.content.SharedPreferences
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,13 +29,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var image4: ImageView
     private lateinit var image5: ImageView
     private lateinit var image6: ImageView
+    lateinit var sharedPreferences: SharedPreferences
+
 
     private val handler = android.os.Handler()
     private var offset = 0
     private var offsetfar = 0
     private var offsetclose = 0
-    var newclan = true
-    var newsamurai = true
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +46,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         image1 = findViewById(R.id.small1)
         image2 = findViewById(R.id.small2)
         image3 = findViewById(R.id.farfaraway)
         image4 = findViewById(R.id.farfaraway2)
         image5 = findViewById(R.id.close1)
         image6 = findViewById(R.id.close2)
+
+
+
+        sharedPreferences = getSharedPreferences("nome_do_prefs", Context.MODE_PRIVATE)
+
+        // Lendo o valor
+        val newsamurai = sharedPreferences.getBoolean("newsamurai", true)
+
 
 
         val animator = ObjectAnimator.ofFloat(binding.startButton, "alpha", 1f, 0f, 1f)
@@ -62,18 +77,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener {
             if (newsamurai == true) {
-                val intent = Intent(this, CreateClan::class.java)
+                val intent = Intent(this, CreateClan2::class.java)
+                intent.putExtra("newsamurai", newsamurai)
                 startActivity(intent)
-
             }
             else {
                 val intent = Intent(this, Dojo::class.java)
                 startActivity(intent)
             }
         }
-
-
-
     }
 
     override fun onDestroy() {
