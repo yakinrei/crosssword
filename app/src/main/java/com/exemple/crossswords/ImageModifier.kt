@@ -6,9 +6,13 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import java.util.concurrent.CountDownLatch
+
 
 object ImageModifier {
 
@@ -16,15 +20,21 @@ object ImageModifier {
     private const val ORIGINAL_HAKAMA_COLOR = 0xFFAFAFAF.toInt() // Cor original do hakama (cinza)
     private const val ORIGINAL_KENDOGI_COLOR = 0xFF142168.toInt() // Cor original do kendogi (azul)
 
-    fun modifyImages(
+
+
+    suspend fun modifyImages(
         context: Context,
         imagesid: List<Int>,
         hakamaColor: Int? = null,
         kendogiColor: Int? = null,
-        p1: Boolean) {
+        p1: Boolean
+    ) {
         Toast.makeText(context, "INICIANDO MODIFICAÇÕES", Toast.LENGTH_SHORT).show()
+
+        // Usando CountDownLatch para aguardar todas as operações de carregamento
+        val latch = CountDownLatch(imagesid.size)
+
         for (id in imagesid) {
-            // Usando Glide para carregar a imagem como Bitmap
             Log.d("ImageModifier", "Carregando imagem")
             Glide.with(context)
                 .asBitmap()
@@ -34,21 +44,29 @@ object ImageModifier {
                         resource: Bitmap,
                         transition: Transition<in Bitmap>?
                     ) {
-                        // Quando a imagem é carregada, modificamos as cores
-                        Toast.makeText(context, "CARREGOU O PARANAUE", Toast.LENGTH_SHORT).show()
                         val modifiedBitmap = replaceColorsInBitmap(resource, hakamaColor, kendogiColor)
                         val resourceName = context.resources.getResourceEntryName(id)
                         val prefix = if (p1) "p1_" else "p2_"
-                        val fileName = "$prefix${resourceName}.png"
+                        val fileName = "$prefix${resourceName}"
                         saveBitmapToFile(context, modifiedBitmap, fileName)
+
+                        // Contar que esta operação foi concluída
+                        latch.countDown()
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) {
                         // Implementação vazia (opcional)
-                        Toast.makeText(context, "NÃO CARREGOU O PARANAUE", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
+
+        // Aguardar até que todas as imagens tenham sido processadas
+        withContext(Dispatchers.IO) {
+            latch.await()
+        }
+
+        // Aqui você pode adicionar qualquer código que precisa ser executado após todas as modificações
+        Toast.makeText(context, "TODAS AS IMAGENS FORAM MODIFICADAS", Toast.LENGTH_SHORT).show()
     }
 
     // Função para substituir as cores específicas no Bitmap

@@ -28,6 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".CreateClan"
+            android:exported="false"/>
+        <activity
+            android:name=".CreateClan2"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
