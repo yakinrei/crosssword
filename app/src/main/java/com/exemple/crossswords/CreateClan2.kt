@@ -13,7 +13,7 @@ import com.exemple.crossswords.databinding.ActivityCreateClan2Binding
 class CreateClan2 : AppCompatActivity() {
     private lateinit var binding: ActivityCreateClan2Binding
     private var color = "cinza"
-
+//    private val sharedPreferences: SharedPreferences by lazy {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
