@@ -76,9 +76,9 @@ class CreateClan2 : AppCompatActivity() {
 
 
 
-        val editor = MainActivity.sharedPreferences.edit()
-        editor.putBoolean("newsamurai", false)
-        editor.apply()
+//        val editor = MainActivity.sharedPreferences.edit()
+//        editor.putBoolean("newsamurai", false)
+//        editor.apply()
 
 
 
